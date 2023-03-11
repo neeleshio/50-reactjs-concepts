@@ -106,17 +106,17 @@ Hooks allow function components to have access to state and other React features
 3. useContext - Context is React’s way of handling shared data between multiple components.
 
 #### Additional Hooks
-4. useReducer
-5. useCallback
-6. useMemo
-7. useRef
-8. useImperativeHandle
-9. useLayoutEffect
-10. useDebugValue
-11. useDeferredValue
-12. useTransition
-13. useId
+4. useReducer - useReducer may be used as an alternative to useState. It’s ideal for complex state logic.
+5. useCallback - useCallback returns a memoized callback function.
+6. useMemo - useMemo Hook returns a memoized value.
+7. useRef - The useRef Hook allows you to persist values between renders.
+8. useImperativeHandle - useImperativeHandle is a React Hook that lets you customize the handle exposed as a ref.
+9. useLayoutEffect - useLayoutEffect is a version of useEffect that fires before the browser repaints the screen.
+10. useDebugValue - useDebugValue Hook helps developers to debug custom hooks in Devtools.
+11. useDeferredValue - useDeferredValue is a React Hook that lets you defer updating a part of the UI.
+12. useTransition - useTransition is a React Hook that lets you update the state without blocking the UI.
+13. useId - useId is a React Hook for generating unique IDs that can be passed to accessibility attributes.
 
 #### Library Hooks
-14. useSyncExternalStore
-15. useInsertionEffect
+14. useSyncExternalStore - useSyncExternalStore is a React Hook that lets you subscribe to an external store.
+15. useInsertionEffect - useInsertionEffect is a version of useEffect that fires before any DOM mutations.
