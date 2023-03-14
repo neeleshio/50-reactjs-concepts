@@ -346,6 +346,8 @@ export const MemoizedComponent = React.memo(myComponent);
 4. When we have a pure functional component, meaning it should output the same results with the same input.
 5. Donot use when you have a component with often changing props becoz memo have to compares & that is an expensive operation.
 
+**[⬆ Back to Top](#lets-go-)**
+
 ## 21. Forward ref
 Used to pass the reference/ref from the parent component to the child component.
 
@@ -360,6 +362,8 @@ const Child = forwardRef((props, ref) => {
   <input ref={ref}/>
 })
 ```
+
+**[⬆ Back to Top](#lets-go-)**
 
 ## 22. Context API vs Redux
 Context provides a way to pass data through the component tree without having to pass props down manually at every level.
