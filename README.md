@@ -14,6 +14,24 @@
 2. [Static vs Dynamic vs SPA](#2-Static-vs-Dynamic-vs-SPA) 
 3. [Why React is a library](#3-Why-React-is-a-library)
 4. [Virtual DOM](#4-Virtual-DOM)
+5. [Shadow DOM](#5-Shadow-DOM)
+6. [React DOM](#6-React-DOM)
+7. [JSX](#7-JSX)
+8. [XML](#8-XML)
+9. [Class Life Cycle Methods](#9-Class-Life-Cycle-Methods)
+10. [React Hooks](#10-React-Hooks)
+11. [Functional components](#11-Functional-components)
+12. [Why use functional components over class components](#12-Why-use-functional-components-over-class-components)
+13. [Prop drilling](#13-Prop-drilling)
+14. [State vs Props](#14-State-vs-Props)
+15. [Strict mode](#15-Strict-mode)
+16. [React optimisation techniques](#16-React-optimisation-techniques)
+17. [Error boundries](#17-Error-boundries)
+18. [One way vs Two way Binding](#18-One-way-vs-Two-way-Binding)
+19. [Controlled vs Uncontrolled components](#19-Controlled-vs-Uncontrolled-components)
+20. [React.memo](#20-React-memo)
+21. [Forward ref](#21-Forward-ref)
+22. [Context API vs Redux](#22-Context-API-vs-Redux)
 
 ## 1. Why React?
 With React, first we can built the components, then we can connect them together.
@@ -38,14 +56,14 @@ With React, first we can built the components, then we can connect them together
 
 **[⬆ Back to Top](#lets-go-)**
 
-## 3. Why React is a library?
+## 3. Why React is a library
 React deals with the `views` & let's us choose the reest of the front-end architecture.
 
 But by adding few more libraries, we can build a complete app easily & also react has the best community around it.
 
 **[⬆ Back to Top](#lets-go-)**
 
-## 4. Virtual DOM:
+## 4. Virtual DOM
 Let us first understand DOM, it is Document Object Model. It is a structural representation of the HTML elements. 
 DOM represents the entire UI of the applicaton.
 
@@ -55,12 +73,12 @@ The `virtual DOM` (VDOM) is a programming concept where an ideal, or “virtual�
 
 **[⬆ Back to Top](#lets-go-)**
 
-## 5. Shadow DOM:
+## 5. Shadow DOM
 The Shadow DOM is a browser technology designed primarily for scoping variables and CSS in web components.
 
 **[⬆ Back to Top](#lets-go-)**
 
-## 6. React DOM:
+## 6. React DOM
 Its a package that provides DOM specific methods to manage the DOM elements. It provides some APIs or methods, such as render, find DOM node etc.
 ```javascript
 ReactDOM.render(
@@ -144,7 +162,7 @@ Functional components are stateless(No state & no side effects) components befor
 
 **[⬆ Back to Top](#lets-go-)**
 
-## 12. Why use functional components over class components?
+## 12. Why use functional components over class components
 In javascript, classes are not real classes, they are just syntactic sugar, behind they are actually functions itself.
 
 Functions are straight forward, so 3 things actually motivated react team to introduce hooks to provide lifecycle features to functional components.
@@ -176,7 +194,7 @@ Prop drilling refers to where we have to pass data/state from a top-level compon
 
 **[⬆ Back to Top](#lets-go-)**
 
-## 15. Strict mode.
+## 15. Strict mode
 It activates additional checks & warning for its decendents.
 
 It highlights the potential problems in the application.
@@ -203,7 +221,7 @@ When we are rendering large amount of data, implementing pagination decreases th
 5. **React-window**(Virtualize long lists):
 If we are rendering a very large list, implementing infinte scroll technique using `react-window` helps in rendering only visible lists.
 
-6. **Using Throttling & debouncing techniques:
+6. **Using Throttling & debouncing techniques**:
 
 7. **Using a CDN**
 This will be useful in delivering the static content more quickly & efficiently.
@@ -264,7 +282,7 @@ npm i react-error-boundary
 
 **[⬆ Back to Top](#lets-go-)**
 
-## 18. One way vs Two way Binding.
+## 18. One way vs Two way Binding
 Data Binding is the process of connecting the view element or user interface, with the data which populates it. ReactJS uses one-way data binding.
 
 Data binding in React can be achieved by using a `controlled input`. A controlled input is achieved by binding the value to a state variable and a `onChange event` to change the state as the input value changes.
@@ -292,4 +310,58 @@ To write an uncontrolled component, instead of writing an event handler for ever
 
 **[⬆ Back to Top](#lets-go-)**
 
-## 20. 
+## 20. React memo
+React Memo is a higher-order component that wraps around a component to memoize the rendered output and avoid unnecessary renderings. or,\
+If our component renders the same result given the same props, we can wrap it in a React.memo HOC.
+
+This improves performance because it memoizes the result and skips rendering to reuse the last rendered result.
+
+There are two ways you can wrap your component with React.memo():
+
+```javascript
+const myComponent = React.memo((props) => {
+    /* render using props */
+});
+
+export default myComponent;
+```
+
+```javascript
+const myComponent = (props) => {
+    /* render using props */
+};
+
+export const MemoizedComponent = React.memo(myComponent);
+```
+
+#### Characteristics:
+1. Use this to wrap only the child components.
+2. Memo only checks for prop changes.
+3. It checks/compares both the type & value.
+
+#### When not to use memo:
+1. If the component is heavy & usually renders with different props.
+2. The more often the component renders with the same props, the havier & more computationaly expensive the output is, we need memo.
+3. Use profiling to measure the benefits of applying React.memo.
+4. When we have a pure functional component, meaning it should output the same results with the same input.
+5. Donot use when you have a component with often changing props becoz memo have to compares & that is an expensive operation.
+
+## 21. Forward ref
+Used to pass the reference/ref from the parent component to the child component.
+
+```javascript
+const inputRef = useRef(null)
+
+// inside parent component
+<Child ref={inputRef} />
+
+// inside child component
+const Child = forwardRef((props, ref) => {
+  <input ref={ref}/>
+})
+```
+
+## 22. Context API vs Redux
+Context provides a way to pass data through the component tree without having to pass props down manually at every level.
+
+Context API helps in eleminating prop drilling & it is ideal for small applications.
