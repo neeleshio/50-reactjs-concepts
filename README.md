@@ -145,7 +145,7 @@ Functional components are stateless(No state & no side effects) components befor
 **[⬆ Back to Top](#lets-go-)**
 
 ## 12. Why use functional components over class components?
-0. First, in javascript, classes are not real classes, they are just syntactic sugar. behind they are actually functions itself.
+In javascript, classes are not real classes, they are just syntactic sugar, behind they are actually functions itself.
 
 Functions are straight forward, so 3 things actually motivated react team to introduce hooks to provide lifecycle features to functional components.
 1. Complex components become hard to understand.
@@ -265,3 +265,31 @@ npm i react-error-boundary
 **[⬆ Back to Top](#lets-go-)**
 
 ## 18. One way vs Two way Binding.
+Data Binding is the process of connecting the view element or user interface, with the data which populates it. ReactJS uses one-way data binding.
+
+Data binding in React can be achieved by using a `controlled input`. A controlled input is achieved by binding the value to a state variable and a `onChange event` to change the state as the input value changes.
+
+We can see two-way binding in `AngularJS`. Two-way binding gives components in your application a way to share data. Use two-way binding to listen for events and update values simultaneously between parent and child components.
+
+**[⬆ Back to Top](#lets-go-)**
+
+## 19. Controlled vs Uncontrolled components
+In a `controlled component`, form data is handled by a React component. The alternative is `uncontrolled components`, where form data is handled by the DOM itself.
+
+To write an uncontrolled component, instead of writing an event handler for every state update, you can use a ref to get form values from the DOM.
+
+#### Controlled:
+1. The component is under control of the component’s state.
+2. These components are predictable as are controlled by the state of the component.
+3. Controlled by the parent component.
+4. Have better control on the form data and values
+
+#### Uncontrolled:
+1. Components are under the control of DOM.
+2. Are unpredictable because during the life cycle methods the data may loss.
+3. Controlled by the DOM itself.
+4. Has very limited control over form values and data.
+
+**[⬆ Back to Top](#lets-go-)**
+
+## 20. 
