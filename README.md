@@ -85,7 +85,7 @@ root.render(myElement);
 ```
 
 ## 8. XML
-Stands for Xtensible markup language.
+Stands for `Xtensible markup language`.
 
 HTML is a Markup language but XML provides framework to define markup languages.
 
@@ -120,3 +120,116 @@ Hooks allow function components to have access to state and other React features
 #### Library Hooks
 14. **useSyncExternalStore** - useSyncExternalStore is a React Hook that lets you subscribe to an external store.
 15. **useInsertionEffect** - useInsertionEffect is a version of useEffect that fires before any DOM mutations.
+
+## 11. Functional components
+Functional components are stateless(No state & no side effects) components before hooks introduction.
+
+## 12. Why use functional components over class components?
+0. First, in javascript, classes are not real classes, they are just syntactic sugar. behind they are actually functions itself.
+
+Functions are straight forward, so 3 things actually motivated react team to introduce hooks to provide lifecycle features to functional components.
+1. Complex components become hard to understand.
+2. Classes confuse both humans and machines.
+3. It's hard to resuse stateful logic b/w components.
+
+In Javascript, the 'this' keyword acts differently than other language, so there will be some learning curve for someone who is coming from other languages.
+
+## 13. Prop drilling
+Prop drilling refers to where we have to pass data/state from a top-level component to a deeply nested component.
+
+## 14. State vs Props
+#### State:
+1. States are plain Javascript objects. It allows components to create & manage their own data.
+2. States are mutable.
+3. State holds the information about the component.
+4. State cannot be accessed by the child component.
+
+#### Props:
+1. Props are also a Javascript object which contains all the properties passed to the child components.
+2. Props are Immutable.
+3. Props allow us to pass data from one component to another component.
+4. Props can be accessed by the child components.
+
+## 15. Strict mode.
+It activates additional checks & warning for its decendents.
+
+It highlights the potential problems in the application.
+
+#### React strict mode renders twice?
+Yes, in order to detect any problems with the code & warn you about them only in development mode.
+
+## 16. React optimisation techniques
+1. **React.Fragments**:\
+It avoids adding extra nodes to the DOM.
+
+2. **React.Lazy & React.Suspense**:\
+Lazy loading is a great technique for optimising & speeding up the render time of our app.\
+The idea of lazy loading is to load components only when it is needed. `React.Suspense` allows us to add a fallback content as a loading state.
+
+3. **React.Memo**:\
+To memorize a component or to cache the component.
+
+4. **Pagination**:
+When we are rendering large amount of data, implementing pagination decreases the load on the DOM tree.
+
+5. **React-window**(Virtualize long lists):
+If we are rendering a very large list, implementing infinte scroll technique using `react-window` helps in rendering only visible lists.
+
+6. **Using Throttling & debouncing techniques:
+
+7. **Using a CDN**
+This will be useful in delivering the static content more quickly & efficiently.
+Cloudflare is an example.
+
+8. **Web workers**:
+Web workers makes it possible to run a script operation in a web browser's background thread, so that the main thread won't get blocked.
+
+9. **Server-side rendering**:
+
+10. **Lazy-loading images**:
+
+11. **Code splitting**:
+
+## 17. Error boundries
+Is the way to handle errors in react.
+
+We can wrap any part of our application in a special component & if that part of our apllication experiences an uncaught error, it will be shown as error.
+So we can log these errors & display a fallback UI. & it doesn't break our app.
+
+To use error boundary, we have to write some boilerplate code with class component.
+
+```javascript
+class ErrorBoundary extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { hasError: false };
+  }
+
+  static getDerivedStateFromError(error) {
+    // Update state so the next render will show the fallback UI.
+    return { hasError: true };
+  }
+
+  componentDidCatch(error, errorInfo) {
+    // You can also log the error to an error reporting service
+    logErrorToMyService(error, errorInfo);
+  }
+
+  render() {
+    if (this.state.hasError) {
+      // You can render any custom fallback UI
+      return <h1>Something went wrong.</h1>;
+    }
+
+    return this.props.children; 
+  }
+}
+```
+
+If we don't want to write all these code, we can just use `react-error-boundary` npm package.
+
+```javascript
+npm i react-error-boundary
+```
+
+## 18. One way vs Two way Binding.
