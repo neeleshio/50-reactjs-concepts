@@ -36,10 +36,14 @@ With React, first we can built the components, then we can connect them together
 2. It is a single file that served to the client. It doesn't reload the page rather re-renders the page contents.
 3. Not good for SEO becoz a web crawler may not wait for the JavaScript to finish executing before it is finished crawling.
 
+**[⬆ Back to Top](#lets-go-)**
+
 ## 3. Why React is a library?
 React deals with the `views` & let's us choose the reest of the front-end architecture.
 
 But by adding few more libraries, we can build a complete app easily & also react has the best community around it.
+
+**[⬆ Back to Top](#lets-go-)**
 
 ## 4. Virtual DOM:
 Let us first understand DOM, it is Document Object Model. It is a structural representation of the HTML elements. 
@@ -49,8 +53,12 @@ Without React we can directly manipulate the DOM elements which results in frequ
 
 The `virtual DOM` (VDOM) is a programming concept where an ideal, or “virtual”, representation of a UI is kept in memory and synced with the “real” DOM by a library such as ReactDOM. This process is called `reconciliation`.
 
+**[⬆ Back to Top](#lets-go-)**
+
 ## 5. Shadow DOM:
 The Shadow DOM is a browser technology designed primarily for scoping variables and CSS in web components.
+
+**[⬆ Back to Top](#lets-go-)**
 
 ## 6. React DOM:
 Its a package that provides DOM specific methods to manage the DOM elements. It provides some APIs or methods, such as render, find DOM node etc.
@@ -61,6 +69,8 @@ ReactDOM.render(
   </React>, document.getElementById('root')
 );
 ```
+
+**[⬆ Back to Top](#lets-go-)**
 
 ## 7. JSX
 1. Stands for JavaScript XML.
@@ -84,16 +94,22 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(myElement);
 ```
 
+**[⬆ Back to Top](#lets-go-)**
+
 ## 8. XML
 Stands for `Xtensible markup language`.
 
 HTML is a Markup language but XML provides framework to define markup languages.
+
+**[⬆ Back to Top](#lets-go-)**
 
 ## 9. Class Life Cycle Methods
 1. **Mounting** : constructor, static getDerivedStateFromProps, render & componentDidMount.
 2. **Updating**: static getDerivedStateFromProps, render, shouldComponentUpdate, getSnapshotBeforeUpdate, componentDidUpdate.
 3. **Unmounting**: componentWillUnmount.
 4. **Error handling**: static getDerivedStateFromError & componentDidCatch.
+
+**[⬆ Back to Top](#lets-go-)**
 
 ## 10. React Hooks
 Introduced in React 16.8.
@@ -121,8 +137,12 @@ Hooks allow function components to have access to state and other React features
 14. **useSyncExternalStore** - useSyncExternalStore is a React Hook that lets you subscribe to an external store.
 15. **useInsertionEffect** - useInsertionEffect is a version of useEffect that fires before any DOM mutations.
 
+**[⬆ Back to Top](#lets-go-)**
+
 ## 11. Functional components
 Functional components are stateless(No state & no side effects) components before hooks introduction.
+
+**[⬆ Back to Top](#lets-go-)**
 
 ## 12. Why use functional components over class components?
 0. First, in javascript, classes are not real classes, they are just syntactic sugar. behind they are actually functions itself.
@@ -134,8 +154,12 @@ Functions are straight forward, so 3 things actually motivated react team to int
 
 In Javascript, the 'this' keyword acts differently than other language, so there will be some learning curve for someone who is coming from other languages.
 
+**[⬆ Back to Top](#lets-go-)**
+
 ## 13. Prop drilling
 Prop drilling refers to where we have to pass data/state from a top-level component to a deeply nested component.
+
+**[⬆ Back to Top](#lets-go-)**
 
 ## 14. State vs Props
 #### State:
@@ -150,6 +174,8 @@ Prop drilling refers to where we have to pass data/state from a top-level compon
 3. Props allow us to pass data from one component to another component.
 4. Props can be accessed by the child components.
 
+**[⬆ Back to Top](#lets-go-)**
+
 ## 15. Strict mode.
 It activates additional checks & warning for its decendents.
 
@@ -157,6 +183,8 @@ It highlights the potential problems in the application.
 
 #### React strict mode renders twice?
 Yes, in order to detect any problems with the code & warn you about them only in development mode.
+
+**[⬆ Back to Top](#lets-go-)**
 
 ## 16. React optimisation techniques
 1. **React.Fragments**:\
@@ -189,6 +217,8 @@ Web workers makes it possible to run a script operation in a web browser's backg
 10. **Lazy-loading images**:
 
 11. **Code splitting**:
+
+**[⬆ Back to Top](#lets-go-)**
 
 ## 17. Error boundries
 Is the way to handle errors in react.
@@ -231,5 +261,7 @@ If we don't want to write all these code, we can just use `react-error-boundary`
 ```javascript
 npm i react-error-boundary
 ```
+
+**[⬆ Back to Top](#lets-go-)**
 
 ## 18. One way vs Two way Binding.
