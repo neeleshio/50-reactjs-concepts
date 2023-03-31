@@ -32,6 +32,34 @@
 20. [React.memo](#20-React-memo)
 21. [Forward ref](#21-Forward-ref)
 22. [Context API vs Redux](#22-Context-API-vs-Redux)
+23. [Redux]
+24. [Redux side-effects]
+25. [Middlewares]
+26. [Redux toolkit]
+27. [Redux persists]
+28. [NextJS]
+29. [React vs Nextjs]
+30. [Nextjs rendering methods]
+31. [Advantages of NextJs]
+32. [Composition]
+33. [Keys]
+34. [Thinking in React]
+35. [Accessibility]
+36. [Code Splitting]
+37. [PropTypes]
+38. [Reconciliation]
+39. [Fragments]
+40. [State mutation]
+41. [Use of render()]
+42. [useContext vs Redux]
+43. [useState vs useReducer]
+44. [useMemo vs useCallback]
+45. [useEffect vs useLayoutEffect]
+46. [useRef]
+47. [useImperativeHandle]
+48. [Styling in React]
+49. [Custom Hook]
+50. [React Router]
 
 ## 1. Why React?
 With React, first we can built the components, then we can connect them together.
@@ -67,7 +95,7 @@ But by adding few more libraries, we can build a complete app easily & also reac
 Let us first understand DOM, it is Document Object Model. It is a structural representation of the HTML elements. 
 DOM represents the entire UI of the applicaton.
 
-Without React we can directly manipulate the DOM elements which results in frequent DOM manipulation, and each time an update was made the browser had to re-calculate & repaint the whole view accr to the new content.So React brought us Virtual DOM, which can be refered as the copy of the actual DOM. 
+Without React we can directly manipulate the DOM elements which results in frequent DOM manipulation, and each time an update was made the browser had to re-calculate & repaint the whole view accr to the new content. So React brought us Virtual DOM, which can be refered as the copy of the actual DOM. 
 
 The `virtual DOM` (VDOM) is a programming concept where an ideal, or “virtual”, representation of a UI is kept in memory and synced with the “real” DOM by a library such as ReactDOM. This process is called `reconciliation`.
 
@@ -213,7 +241,7 @@ Lazy loading is a great technique for optimising & speeding up the render time o
 The idea of lazy loading is to load components only when it is needed. `React.Suspense` allows us to add a fallback content as a loading state.
 
 3. **React.Memo**:\
-To memorize a component or to cache the component.
+To memoize a component or to cache the component.
 
 4. **Pagination**:
 When we are rendering large amount of data, implementing pagination decreases the load on the DOM tree.
