@@ -41,7 +41,7 @@
 29. [React vs Nextjs]
 30. [Nextjs rendering methods]
 31. [Advantages of NextJs]
-32. [Composition]
+32. [Composition vs Inheritance]
 33. [Keys]
 34. [Thinking in React]
 35. [Accessibility]
@@ -577,6 +577,27 @@ Drawback is again the SEO issue.
 4. Pre-rendering can result in better performance and SEO.
 5. Out of the box image optimisation using Image tag.
 
-## 32. Composition 
+## 32. Composition vs Inheritance
+In Object-Oriented Programming, `composition` is a well-known concept. It describes a class that can refer to one or more objects of another class as instances rather than inheriting properties from a base class like `inheritance`.
+
+Inheritance is an Object-Oriented Programming concept in JavaScript that allows us to inherit the features of a parent from the child.
+
+React recommends Composition.
 
 ## 33. Keys
+Keys help React identify which items have changed, are added, or are removed. 
+
+Keys should be given to the elements inside the array to give the elements a stable identity.
+
+React don’t recommend using indexes for keys if the order of items may change. This can negatively impact performance and may cause issues with component state.
+
+Note: If you choose not to assign an explicit key to list items then React will default to using indexes as keys.
+
+## 34. Thinking in React
+1. Break The UI Into A Component Hierarchy
+2. Build A Static Version in React
+3. Identify The Minimal (but complete) Representation Of UI State
+4. Identify Where Your State Should Live
+5. Add Inverse Data Flow
+
+## 35. Accessibility
